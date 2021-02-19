@@ -1,0 +1,79 @@
+<mat-card appMaterialElevation style="margin: 20px;" *ngFor="let product of products">
+    <div class="container" fxLayout="column">
+    <div fxFlex="40%" style="margin: 30px;">
+     
+         <mat-card-content>
+           <b style="color:black;font-size: 20px; " matTooltip="name of the product">{{product.name}}</b>
+          </mat-card-content>
+        
+      <mat-card-content>
+            <b matTooltip="product price"> ‎₹‎{{product.price}}</b>
+          </mat-card-content>
+        
+      <mat-card-content>
+            {{product.description}}
+          </mat-card-content>
+       
+        <mat-card-actions>
+       <b>Quantity:</b>&nbsp;&nbsp;{{count}}Kg&nbsp;&nbsp;
+            <button (click)="inc()" ng-init="count=0">
+                +
+              </button>&nbsp;&nbsp;&nbsp;
+              <button (click)="dec()" ng-init="count">
+                -</button>
+        </mat-card-actions>
+    </div>
+        <div  fxFlex="40" class="example-container" style="margin: 30px;">
+           
+          <mat-form-field class="example-full-width">
+            <mat-label>Delivery Location</mat-label>
+            
+            <input   matInput placeholder="573201"  value="location"  required>
+          </mat-form-field>
+          <i class="fa fa-map-marker" aria-hidden="true" style="color: blue;"></i>
+          <br>  <a href="#" (click)="location()" matTooltip="check your delivery location are available">check</a>
+          <br>
+                <a>Usually delivered in8-9 days<br>
+                  Enter pincode for exact delivery dates/charges</a>
+               
+   <br><br>
+    
+  
+  <mat-card-content>
+        <b>serviceses:</b> 
+        <div>
+            <br>
+          <p>  <i class="fa fa-truck" aria-hidden="true" style="color: green;" matTooltip="Door to Door Delivery"></i>&nbsp;&nbsp;Easy Doorstep Return</p>
+          
+        <p><i class="fa fa-rupee" style="font-size:24px" style="color: block;" matTooltip="cash on delivery"></i>&nbsp;&nbsp;Cash on Delivery available</p>
+        </div>
+      </mat-card-content>
+    </div> 
+ <div fxFlex="20" class="example-container" style="margin: 30px;">
+    <mat-card-actions>
+      <div (click)="wishlist()" matTooltip="Add to Wishlist or favoirte list"><i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>&nbsp;&nbsp;Add to My WishList</div>
+  </mat-card-actions>
+  
+<mat-card-actions>
+  {{product.quantity}}&nbsp;&nbsp;items
+  <button mat-raised-button color="primary" style="margin:26px" matTooltip="availablity of the stock" (click)="instock()">In Stock</button>
+</mat-card-actions>
+
+<mat-card-actions>
+<div (click)="share()" matTooltip="Share to your friends"><i class="fa fa-share-alt" aria-hidden="true"  style="color:blue;"></i>&nbsp;Share To Your friends</div>          
+</mat-card-actions>
+
+<mat-card-actions>
+<div (click)="print()" matTooltip="Print he statment here"><i class="fa fa-print" aria-hidden="true"  style="color: blue;"></i>&nbsp;Print</div>
+</mat-card-actions>
+
+<!-- <mat-card-content>
+      <div class="container1" [class.show]="show">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </div>
+    <button (click)="show = !show">{{ show ? 'Show less': 'Show More' }}</button>
+  </mat-card-content> -->
+</div>
+   </div>
+
+  </mat-card>

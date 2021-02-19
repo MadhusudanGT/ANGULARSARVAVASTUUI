@@ -1,0 +1,78 @@
+<ng-container >
+
+    <ul>
+      <li *ngFor="let i of item">
+  <div class="container col s12 m12 l12" *ngIf="i.id!=null">
+    <h2 class="header">Product </h2>
+    <div class="card horizontal">
+      <div class="card-image col l2 s3 m3" style="max-width: 300px; height: auto;">
+        <img [src]="i.image" [alt]="i.imageAlt">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content" style="display: flex;">
+          <div style="width: 95%;">
+            <mat-card-content>
+              <mat-card-title>{{ i.name }}</mat-card-title>
+              <mat-card-subtitle>{{ i.category }}</mat-card-subtitle>
+      </mat-card-content>
+          <p class="price-details-container">
+            <b>{{ i.sellingPrice | currency: "INR":true }}</b>
+            <span
+            *ngIf="i.MRPPrice !== 0"
+            style="text-decoration: line-through;"
+          >
+            {{ i.MRPPrice | currency: "INR":true }}
+          </span>
+          <b *ngIf="i.MRPPrice !== 0" style="color: forestgreen;"
+            >{{
+              i.sellingPrice / i.MRPPrice | percent
+            }}
+            off</b
+          >
+        </p>
+        </div>
+        <div style="justify-content: end;">
+          <mat-icon style="cursor: pointer;" title="delete" (click)="deleteFromWishList(i)">  delete</mat-icon>
+        </div>
+  
+               </div>
+        <div class="card-action">
+          <button mat-button (click)="addTocart(i)"><a>Add to cart</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </li>
+  </ul>
+  </ng-container>
+  
+   <!-- <ng-container *ngFor="let i of item" class="col s6 m3 l3">
+   <mat-card class="item-card" *ngIf="i.id!=null">
+    <img mat-card-image [src]="i.image" [alt]="data.imageAlt" />
+    <mat-card-content>
+      <mat-card-title>{{ i.name }}</mat-card-title>
+      <mat-card-subtitle>{{ i.category }}</mat-card-subtitle>
+      <div>
+        <p class="price-details-container">
+          <b>{{ i.sellingPrice | currency: "INR":true }}</b>
+          <span
+            *ngIf="i.MRPPrice !== 0"
+            style="text-decoration: line-through;"
+          >
+            {{ i.MRPPrice | currency: "INR":true }}
+          </span>
+          <b *ngIf="i.MRPPrice !== 0" style="color: forestgreen;"
+            >{{
+              i.sellingPrice / i.MRPPrice | percent
+            }}
+            off</b
+          >
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-divider></mat-divider>
+  </ng-container>
+  <ul>
+  <li *ngFor="let i of item">{{i.pname}}</li>
+  </ul> -->

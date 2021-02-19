@@ -1,0 +1,56 @@
+<mat-toolbar>
+    <img src="./assets/sarvavastu_Logo.png" alt="sarvavastu_logo" width="70px" height="auto"><span>Sarvavastu</span>
+    <div class="search-algin" aria-label="search" fxflex fxflexoffset.gt.sm="10" fxshow="false" fxshow.gt-sm style="flex:1 1 0%;box-sizing:border-box;margin-left:10%;display:block;"> 
+        <form class="search-form ng-untouched ng-pristine ng-valid" fxlayout="row" method="" novalidate style="flex-direction:row;display:flex;">
+        
+            <mat-menu #beforeMenu="matMenu" class xposition="before">
+ 
+            </mat-menu>
+            <input matInput aria-label="search"  type="text" placeholder="please search here" style="flex:1 1 0%;box-sizing:initial;" >
+            <!-- <button class="search-btn mat-accent mat-elevation-z0  mat-primary mat-mini-primary"  mat-mini-primary  type="button" style="width:60px;height:46px;"> -->
+               <span class="materials-icon"><mat-icon class="caret mat-icon materials-icons" role="img" aria-hidden="true" style="margin-right:20px;margin-top:15px;">search</mat-icon></span>
+               <div class="mat-button-ripple mat-ripple mat-button-ripple-round"></div>
+               <div class="mat-button-focus-overlay"></div>
+            <!-- </button> -->
+        </form>
+     </div>
+     
+    <div class="spaces"></div>
+    <a mat-button [matMenuTriggerFor]="menu1"> English <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">arrow_drop_down</mat-icon></a>
+    <mat-menu #menu1="matMenu">
+        <button mat-menu-item>Bengali</button>
+        <button mat-menu-item>Hindi</button>
+        <button mat-menu-item>Telugu</button>
+        <button mat-menu-item>Kanada</button>
+    </mat-menu>
+    <a mat-button routerLink="Email" (click)="openDialog()">Email</a>
+    <a mat-button routerLink="PhoneNo" (click)="newOpenDialog()">PhoneNo</a>
+    <a mat-raised-button color="accent" routerLink="Login">Login</a>
+    <a mat-icon-button [matMenuTriggerFor]="menu2"><mat-icon>more_vert</mat-icon></a>
+    <mat-menu #menu2="matMenu">
+        <button mat-menu-item routerLink="Feedback">Send Feedback</button>
+        <button mat-menu-item>Option2</button>
+    </mat-menu>
+</mat-toolbar>
+    
+  <!-- Navigation Dropdown -->
+  <mat-toolbar color="primary">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">home</mat-icon>
+    <span class="example-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/allproducts'"> ALL PRODUCTS </a>
+      <a mat-button [routerLink]="'/services'"> SERVICES </a>
+      <a mat-button [routerLink]="'/blog'"> BLOG </a>
+      <a mat-button [routerLink]="'/contactus'"> CONTACT US </a>
+      <a mat-button [matMenuTriggerFor]="menu3"> REVIEWS <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">arrow_drop_down</mat-icon> </a>
+      <a mat-button [matMenuTriggerFor]="menu4"> ORDER <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">arrow_drop_down</mat-icon></a>
+      <mat-menu #menu3="matMenu">
+        <button mat-menu-item>GIFT CARD</button>
+        <button mat-menu-item>INCENTIVES</button>
+      </mat-menu>
+      <mat-menu #menu4="matMenu">
+        <button mat-menu-item>ORDER DESCRIPTION</button>
+        <button mat-menu-item>TRACK ORDER</button>
+      </mat-menu>
+  </div>
+  </mat-toolbar>

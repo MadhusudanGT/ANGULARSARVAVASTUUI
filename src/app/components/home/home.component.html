@@ -1,0 +1,37 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" style="width: 100%;height:100%">
+    
+  <div fxFlex="50%" style="color: white;background-color: blue; text-align: center;" *ngIf="exp1">
+    <div >
+      <h1>Login</h1><br>
+      <a>    Get access to your order <br>WishLsit and Recommendation</a>
+    </div>
+    <br>
+    <!-- <video width="310" height="200" controls> 
+         
+    </video> -->
+ <br><br>
+    <div>
+      <img  class="images" src="/assets/IMG/Ecorner_Shop.png" alt="logo"  height= "135px" width="236px">
+     
+  </div>
+ 
+</div>
+
+    <!-- -------------- -->
+    <div fxFlex="50%" *ngIf="exp1">
+      <nav>
+        <div style="text-align: center; margin: 5px;">
+          <span class="example-button-row">
+            <button mat-stroked-button routerLink="/login" routerLinkActive="active" (click)="clk1()" >Login</button>
+          </span>
+          <span style="margin: 5px;"></span>
+          <span class="example-button-row">
+            <button mat-stroked-button routerLink="/registration" routerLinkActive="active" (click)="clk2()">SignIn</button>
+          </span>
+        </div>
+      </nav>
+ 
+      </div>
+
+</div>
+

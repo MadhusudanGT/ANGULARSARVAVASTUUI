@@ -1,0 +1,44 @@
+<h3> Search</h3>
+<form [formGroup]="bookForm" (ngSubmit)="onFormSubmit()" class="book-form">
+  <mat-form-field class="select-book">
+    <input type="text" (keyup)="applyFilter($event)" placeholder="Select a book" matInput  formControlName="book" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let book of $filteredBooks | async" [value]="book">
+        {{book.name}}
+      </mat-option>
+      <mat-option *ngFor="let book of $filteredwriterBooks | async" [value]="book">
+        {{book.writer}}
+      </mat-option>
+    </mat-autocomplete>
+  
+    <mat-error *ngIf="book.hasError('required')">
+      Book required.
+    </mat-error>
+  </mat-form-field>
+  <br/>
+  <br/>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="writer">
+      <th mat-header-cell *matHeaderCellDef> Writer </th>
+      <td mat-cell *matCellDef="let element"> {{element.writer}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  <button mat-raised-button>Submit</button>
+  <button mat-raised-button type="button" (click)="resetForm()">Reset</button>
+</form> 

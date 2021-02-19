@@ -1,0 +1,7 @@
+<h1>Welcome to your Cart</h1>
+<div *ngIf="itemList.length === 0">Your Cart is Emtpy</div>
+<div *ngIf="itemList.length > 0">
+  <ol>
+    <li *ngFor="let item of itemList">{{item.name}}</li>
+  </ol>
+</div>

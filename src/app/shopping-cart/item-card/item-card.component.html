@@ -1,0 +1,51 @@
+<mat-card class="item-card">
+    <img mat-card-image [src]="productItem.image" [alt]="productItem.imageAlt" />
+    <mat-card-content>
+      <mat-card-title>{{ productItem.name }}</mat-card-title>
+      <mat-card-subtitle>{{ productItem.category }}</mat-card-subtitle>
+      <div>
+        <p class="price-details-container">
+          <b>{{ productItem.sellingPrice | currency: "INR":true }}</b>
+  
+          <span
+            *ngIf="productItem.MRPPrice !== 0"
+            style="text-decoration: line-through;"
+          >
+            {{ productItem.MRPPrice | currency: "INR":true }}
+          </span>
+          <b *ngIf="productItem.MRPPrice !== 0" style="color: forestgreen;"
+            >{{
+              productItem.sellingPrice / productItem.MRPPrice | percent
+            }}
+            off</b
+          >
+        </p>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions class="card-button-container">
+  
+        <mat-icon class="white" color="primary" style =" cursor: pointer;"
+          (mouseover)="showWishlistMessage = true"
+          (mouseleave)="showWishlistMessage = false"
+          (click)="addToWishList(productItem)"
+          >favorite
+        </mat-icon>
+  
+  
+      <a href="">
+        <mat-icon
+          (mouseover)="showDescriptionMessage = true"
+          (mouseleave)="showDescriptionMessage = false"
+  
+        >
+          visibility</mat-icon>
+      </a>
+      <div [hidden]="!showWishlistMessage">Add to Wishlist</div>
+      <div [hidden]="!showDescriptionMessage">Description</div>
+  
+      <button mat-raised-button color="primary" (click)="addToCart(productItem)">
+        <mat-icon>shopping_cart</mat-icon>ADD TO CART
+      </button>
+    </mat-card-actions>
+  </mat-card>

@@ -1,0 +1,26 @@
+<!-- <product-card></product-card> -->
+<!-- <product-card>
+  <ng-container class="test">Hello</ng-container>
+</product-card> -->
+<a class="" [routerLink]="['/cart']">
+    Goto Cart
+  </a>
+  <a class="" [routerLink]="['/wishlist']">check wishlist</a>
+  <div class="container">
+    <div class="row">
+      <ng-container
+        *ngFor="let i = index; let product; of: products | paginate: config"
+      >
+        <div class="col s6 m3 l3">
+          <item-card [productItem]="product"></item-card>
+          <!-- <div class="divider"></div> -->
+        </div>
+        <!-- <div class="divider" *ngIf="(i + 1) % 3 === 0"></div> -->
+      </ng-container>
+  
+      <pagination-controls
+        class="paginator"
+        (pageChange)="pageChanged($event)"
+      ></pagination-controls>
+    </div>
+  </div>

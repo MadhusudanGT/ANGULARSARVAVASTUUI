@@ -1,0 +1,34 @@
+<mat-card appMaterialElevation style="margin: 20px;" >
+<div  fxLayout="column"   *ngFor="let product of products" fxLayoutAlign="space-around center" >
+  <div fxFlex="40">
+  <mat-card-content>
+    <img width="300" alt="thumbnail" [src]="selectedimg" style=" margin: 37px;">
+  </mat-card-content>
+</div>
+<br>
+<div fxFlex="40">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" style=" width: 359px;height: 91px;">  
+    <div ngxSlickItem *ngFor="let img of product.images" class="slide">  
+      <img src="{{ img }}" width="100%" style="padding: 8px;" (click)="imageclick(img)">  
+     
+    </div>  
+  </ngx-slick-carousel> 
+  </div>
+  <br>
+  <div fxFlex="20">
+    <div fxLayout="row" fxLayoutAlign="space-around center" >
+      <div fxFlex="25%" fxLayoutGap>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" style="margin:26px" (click)="addtocart()" matTooltip="Add your cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;ADD TO CART</button>
+         </mat-card-actions>
+       </div>
+          <div fxFlex="25%" fxLayoutGap >
+            <mat-card-actions>
+              <button mat-raised-button color="primary" style="margin:26px" (click)="addtocart()" matTooltip="Buy the product"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;BUY NOW</button>
+             </mat-card-actions>
+          </div>
+      </div>
+
+</div>
+  </div>
+  </mat-card>

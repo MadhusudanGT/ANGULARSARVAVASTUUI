@@ -1,0 +1,33 @@
+.shadow {
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+ }
+ .slick-slider {  
+    width: 50%;  
+    margin: auto;  
+  }
+  .container1 {
+   font-size: 16px;
+   line-height: 16px;
+   height: 32px;
+   overflow: hidden;
+ }
+ 
+ .show {
+   overflow: visible;
+   height: auto;
+ }
+
+
+
+.prev-slide {
+  background: url(/assets/IMG/lessthanarrrow.jfif) no-repeat scroll 0 0;
+  left: -33px;
+}
+
+.next-slide {
+  background: url(/assets/IMG/Forword_Arrow-512.png) no-repeat scroll -24px 0px;
+  right: -33px;
+}
+

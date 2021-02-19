@@ -1,0 +1,98 @@
+<script  href=".../"></script>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center" style="width: 100%;height:100%">
+    
+  <div fxFlex="50%" style="color: white;background-color: blue; text-align: center;">
+    <div >
+      <h1>Login</h1><br>
+      <a>    Get access to your order <br>WishLsit and Recommendation</a>
+    </div>
+    <br>
+    <!-- <video width="310" height="200" controls> 
+         
+    </video> -->
+ <br><br>
+    <div>
+      <img  class="images" src="/assets/IMG/Ecorner_Shop.png" alt="logo" height= "135px" width="236px">
+    
+  </div>
+ 
+</div>
+    <!-- ---------------- -->
+    <div fxFlex="50%" >
+      <mat-card class="example-card" layout="row" style="margin-top: 107px;">
+      <form class="example-form" #f ="ngForm"  (ngSubmit)="registration()">
+  
+          <div>
+            <mat-label><b>REGISTRATION PAGE</b></mat-label>
+        <span style="margin: 50px;"></span>
+        <span mat-stroked-button routerLink="/" routerLinkActive="active"><i class="fa fa-window-close" aria-hidden="true"  style="font-size:28px;color: red;"></i></span><br>
+      </div><br>
+        <mat-form-field class="example-full-width">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="first name" required #fname="ngModel" name="regis" [(ngModel)]="firstname">
+        </mat-form-field>
+        <div *ngIf=" (fname.dirty || fname.touched)">
+      
+          <p *ngIf="fname.errors " style="color: red;"> First name is compulsary </p>
+          </div>
+          <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Middlename</mat-label>
+            <input matInput placeholder="middle name"  #mname="ngModel" name="mnames"[(ngModel)]="middlename">
+          </mat-form-field>
+        <div *ngIf=" (mname.dirty || mname.touched)">
+      
+          <p *ngIf="mname.errors " style="color: red;"> middle name is compulsary </p>
+          </div>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Lastname</mat-label>
+          <input matInput placeholder="last name"  required #lname="ngModel" name="lnames"[(ngModel)]="lastname">
+        </mat-form-field>
+        <div *ngIf=" (lname.dirty || lname.touched)">
+      
+          <p *ngIf="lname.errors " style="color: red;"> Last name is compulsary </p>
+          </div>
+          <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email ID</mat-label>
+          <input matInput placeholder="email"   required #mails="ngModel" name="email" [(ngModel)]="mail">
+        </mat-form-field>
+        <div *ngIf=" (mails.dirty || mails.touched)">
+      
+          <p *ngIf="mails.errors " style="color: red;">  email is compulsary </p>
+      
+          </div>
+          <br>
+          <mat-form-field class="example-full-width">
+
+            <mat-label>enter mobile number</mat-label>
+            <div class="mobile">
+            <label><h3>+91</h3></label>
+            <input matInput placeholder="mobile"   required #mobiles="ngModel" name="mobile" [(ngModel)]="mobile">
+          </div>
+          </mat-form-field>
+        
+      
+        <div *ngIf=" (mobiles.dirty || mobiles.touched)">
+      
+          <p *ngIf="mobiles.errors " style="color: red;">  mobile is compulsary </p>
+          </div>
+  
+          <br><br>
+          <input type="checkbox" name="checkbox" value="check"  #terms id="agree" required/> I have read and agree to the Terms and Conditions and Privacy Policy
+          <div *ngIf=" (terms.dirty ||terms.touched)">
+      
+            <p *ngIf="terms.errors " style="color: red;"> read and accept the terms and conditions is compulsary </p>
+            </div>
+          <br>
+          <mat-card-actions>
+          <button  mat-raised-button color="primary" [disabled]="f.invalid || f.errors" >Submit</button>
+          <button mat-raised-button type="reset" color="primary">reset</button>
+          </mat-card-actions>
+        
+ 
+        </form>
+      
+</mat-card>
+    </div>
